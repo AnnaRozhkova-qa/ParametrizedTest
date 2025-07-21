@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.anyanyaf'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testImplementation (
+            "com.codeborne:selenide:7.9.0",
+            "org.junit.jupiter:junit-jupiter:5.10.0",
+            "com.github.javafaker:javafaker:1.0.2",
+            "org.slf4j:slf4j-simple:1.7.29"
+    )
+}
+
+test {
+    useJUnitPlatform()
+}

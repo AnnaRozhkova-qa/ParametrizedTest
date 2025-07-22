@@ -1,6 +1,5 @@
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.selector.WithText;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -10,7 +9,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -47,7 +45,7 @@ public class ParametrizedTestTsum {
             @Tag("WEB"),
             @Tag("SMOKE")
     })
-    void SearchResultQueryCheckCsvFileTest(String searchQuery, String name) {
+    void searchResultQueryCheckCsvFileTest(String searchQuery, String name) {
         $("[data-test-id=searchButton]").click();
         $("[data-test-id=searchInputWrapper]").setValue(searchQuery).pressEnter();
         $$("[data-test-id=itemWrapper]").shouldBe(CollectionCondition.sizeGreaterThan(0));
@@ -66,7 +64,7 @@ public class ParametrizedTestTsum {
             @Tag("SMOKE")
     })
 
-    void SearchResultQueryCheckCsvTest(String searchQuery, String name) {
+    void searchResultQueryCheckCsvTest(String searchQuery, String name) {
         $("[data-test-id=searchButton]").click();
         $("[data-test-id=searchInputWrapper]").setValue(searchQuery).pressEnter();
         $$("[data-test-id=itemWrapper]").shouldBe(CollectionCondition.sizeGreaterThan(0));
